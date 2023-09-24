@@ -19,17 +19,10 @@ int main() {
     cout << "Введите годовую процентную ставку: ";
     cin >> annualInterestRate;
 
-    // Вычисление суммы кредита
     double loanAmount = apartmentCost - initialPayment;
-
-    // Вычисление ежемесячной процентной ставки
     double monthlyInterestRate = annualInterestRate / 12 / 100;
-
-    // Вычисление числа месяцев в ипотеке
     double totalMonths = years * 12;
-
     double totalRate = pow((1 + monthlyInterestRate), totalMonths);
-
     double monthlyPayment = loanAmount * monthlyInterestRate * totalRate / (totalRate - 1);
 
     cout << "Ежемесячный платеж: " << monthlyPayment << endl;

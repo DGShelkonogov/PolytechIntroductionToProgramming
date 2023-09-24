@@ -37,8 +37,6 @@ void mySwap(T& a, T& b) {
 
 int main()
 {
-    
-
     auto a = Time();
     auto b = Time();
     swap<Time>(a, b);

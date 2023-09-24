@@ -31,17 +31,19 @@ void calculate()
     int totalShillings = shillingsA + shillingsB;
     int totalPence = penceA + penceB;
 
-    // Обрабатываем переполнения
     if (totalPence >= 12) {
         totalShillings += totalPence / 12;
         totalPence %= 12;
     }
+
     if (totalShillings >= 20) {
         totalPounds += totalShillings / 20;
         totalShillings %= 20;
     }
 
-    cout << "Всего: " << totalPounds << " фунт " << totalShillings << " шиллингов " << totalPence << " пенс" << endl;
+    cout << "Всего: " << totalPounds << " фунт " 
+        << totalShillings << " шиллингов " 
+        << totalPence << " пенс" << endl;
 }
 
 int main() 

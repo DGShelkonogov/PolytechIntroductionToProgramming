@@ -25,11 +25,11 @@ long timeToSecs(Time time)
     return time.hours * 3600 + time.minutes*60 + time.seconds;
 }
 
-Time secsToTime(long seconds)
+Time secsToTime(long totalSeconds)
 {
-    int hours = seconds / 3600;
-    int minutes = (seconds % 3600) / 60;
-    int seconds = seconds % 60;
+    int hours = totalSeconds / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
     return Time(hours, minutes, seconds);
 }
 

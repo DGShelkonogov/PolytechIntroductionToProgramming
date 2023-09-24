@@ -21,8 +21,6 @@ struct Employee
     }
 };
 
-
-
 int main()
 {
     SetConsoleCP(1251);
@@ -31,12 +29,12 @@ int main()
     vector<Employee> office;
 
     for (int i = 0; i < 3; i++)
-    {
         office.push_back(Employee());
-    }
+    
+    cout << endl;
 
     for (int i = 0; i < office.size(); i++)
-    {
-        cout << "Сотрудник №" << i + 1 << "| Имя: " << office[i].name << " | Оклад: " << office[i].salary << endl;
-    }
+        cout << "Сотрудник №" << i + 1
+             << "| Имя: " << office[i].name 
+             << " | Оклад: " << office[i].salary << endl;
 }
