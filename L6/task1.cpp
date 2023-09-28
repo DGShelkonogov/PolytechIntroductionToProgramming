@@ -48,14 +48,29 @@ class MyDouble
 
 MyDouble myPlus(MyDouble a, MyDouble b)
 {
+    string strFractionalA = to_string(a.fractionalPart);
+    string strFractionalB = to_string(b.fractionalPart);
+
+    int countFractionalNumbersA = strFractionalA.length();
+    int countFractionalNumbersB = strFractionalB.length();
+    int maxFractionalNumbers = max(countFractionalNumbersA, countFractionalNumbersB);
+
+    if(countFractionalNumbersA > countFractionalNumbersB)
+    {
+        strFractionalB.append(string(countFractionalNumbersA - countFractionalNumbersB, '0'));
+    }else
+    {
+        strFractionalA.append(string(countFractionalNumbersB - countFractionalNumbersA, '0'));
+    }
+
+
     int whole = a.wholePart + b.wholePart;
-    int fractional = a.fractionalPart + a.fractionalPart;
+    int fractional = stoi(strFractionalA) + stoi(strFractionalB);
 
-    //int zeroCount = 0;
-    //string countFractionalChar = fra.substr(dot + 1, whole.length());
+    int d = stoi("1" + string(maxFractionalNumbers, '0'));
 
-    int wholeOfFractional = static_cast<int>(fractional / 100);
-    fractional = fractional - wholeOfFractional * 100;
+    int wholeOfFractional = static_cast<int>(fractional / d);
+    fractional = fractional - wholeOfFractional *  d;
     whole += wholeOfFractional;
     
     stringstream ss;
@@ -65,8 +80,8 @@ MyDouble myPlus(MyDouble a, MyDouble b)
 
 int main()
 {
-    auto a = MyDouble("2.6");
-    auto b = MyDouble("4.63");
-
-    auto o = myPlus(a, b).toString();
+    auto a = MyDouble("5.37569");
+    auto b = MyDouble("3.954");
+    MyDouble o = myPlus(a, b).toString();
+    cout << o.toString();
 }
