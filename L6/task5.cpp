@@ -82,19 +82,19 @@ class MyDate
             
             if(day <= 0 || day >= 32)
             {
-                cout << "Äåíü äîëæåí áûòü â äèàïàçîíå îò 1 äî 31" << endl;
+                cout << "Ð”ÐµÐ½ÑŒ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð² Ð´Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½Ðµ Ð¾Ñ‚ 1 Ð´Ð¾ 31" << endl;
                 return;
             }
 
             if(mounth <= 0 || mounth >= 13)
             {
-                cout << "Ìåñÿö äîëæåí áûòü â äèàïàçîíå îò 1 äî 12" << endl;
+                cout << "ÐœÐµÑÑÑ† Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð² Ð´Ð¸Ð°Ð¿Ð°Ð·Ð¾Ð½Ðµ Ð¾Ñ‚ 1 Ð´Ð¾ 12" << endl;
                 return;
             }
 
             if(year <= 0)
             {
-                cout << "Ãîä íå ìîæåò áûòü îòðèöàòåëüíûì" << endl;
+                cout << "Ð“Ð¾Ð´ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼" << endl;
                 return;
             }
 
@@ -137,10 +137,10 @@ class Employee
         string toString()
         {
             stringstream ss;
-            ss << "èìÿ ñîòðóäíèêà: " << this->name 
-                << " | îêëàä ñîòðóäíèêà: " << this->salary 
-                << " | Äàòà ïðèåìà íà ðàáîòó: " << this->date.toString() 
-                << " | Òèï: " << etypeNames[etype] << endl;
+            ss << "Ð¸Ð¼Ñ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ°: " << this->name 
+                << " | Ð¾ÐºÐ»Ð°Ð´ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ°: " << this->salary 
+                << " | Ð”Ð°Ñ‚Ð° Ð¿Ñ€Ð¸ÐµÐ¼Ð° Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ: " << this->date.toString() 
+                << " | Ð¢Ð¸Ð¿: " << etypeNames[etype] << endl;
             return ss.str();
         }
 
@@ -158,18 +158,18 @@ void fillEmployee(Employee& emp)
     MyDate date;
     Etype etype;
 
-    cout << "Ââåäèòå èìÿ ñîòðóäíèêó: " << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÑƒ: " << endl;
     getline(cin, name);
 
-    cout << "Ââåäèòå äàòó ïðèåìà íà ðàáîòó â ôîðìàòå (ÄÄ/ÌÌ/ÃÃÃÃ): " << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ñ‚Ñƒ Ð¿Ñ€Ð¸ÐµÐ¼Ð° Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ (Ð”Ð”/ÐœÐœ/Ð“Ð“Ð“Ð“): " << endl;
     getline(cin, strDate);
     date = MyDate(strDate);
 
-    cout << "Ââåäèòå îêëàä ñîòðóäíèêà: " << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾ÐºÐ»Ð°Ð´ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ°: " << endl;
     getline(cin, strSalary);
     salary = stof(strSalary);
 
-    cout << "Âûáèðèòå äîëæíîñòü ñîòðóäíèêà èç ïðåäñòàâëåííîã ñïèñêà: " << endl;
+    cout << "Ð’Ñ‹Ð±Ð¸Ñ€Ð¸Ñ‚Ðµ Ð´Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ° Ð¸Ð· Ð¿Ñ€ÐµÐ´ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð½Ð¾Ð³ ÑÐ¿Ð¸ÑÐºÐ°: " << endl;
     
     for(const auto& type : etypeNames)
     {
@@ -182,7 +182,7 @@ void fillEmployee(Employee& emp)
 
     if(index == 0 && ch != 'l')
     {
-        cout << "Äîëæíîñòü íà÷èíàþùàÿñÿ ñ [" << ch << "] íå íàéäåíà";
+        cout << "Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ Ð½Ð°Ñ‡Ð¸Ð½Ð°ÑŽÑ‰Ð°ÑÑÑ Ñ [" << ch << "] Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°";
         return;
     }
 
@@ -197,7 +197,6 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     
-
     vector<Employee> office;
 
     for (int i = 0; i < 1; i++)
@@ -207,8 +206,6 @@ int main()
         office.push_back(emp);
     }
         
-
     for(Employee& emp : office)
         cout << emp.toString();
-
 }
