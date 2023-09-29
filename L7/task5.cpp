@@ -27,15 +27,27 @@ void showPerson(const Person *person)
 
 void sort(Person office[N])
 {
-    for(int i = 0; i < N; i++)
-    {
-        for(int j = 0; j < N; j++)
-        {
-            if((office + j)->salary < (office + 1 + j)->salary)
-            {
-                Person* b = office;
-                office = (office + 1);
-                *(office + 1) = *b;
+    // for(int i = 0; i < N; i++)
+    // {
+    //     for(int j = 0; j < N; j++)
+    //     {
+    //         if((office + j)->salary < (office + 1 + j)->salary)
+    //         {
+    //             Person* b = office + j;
+    //             office = (office + 1 + j);
+    //             *(office + 1 + j) = *b;
+    //         }
+    //     }
+    // }
+
+
+    for (int i = 0; i < N - 1; i++) {
+        for (int j = 0; j < N - i - 1; j++) {
+            if (office[j].salary > office[j + 1].salary) {
+                
+                Person b = *(office + j);
+                office[j] = office[j + 1];
+                office[j + 1] = b;
             }
         }
     }
